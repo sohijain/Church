@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Church</string>
+    <string name="sign_in">Sign In</string>
+    <string name="enter_your_detail">Email Address /Mobile Number</string>
+    <string name="hidepassword">Password</string>
+    <string name="forgotpass">Forgot Password?</string>
+</resources>
