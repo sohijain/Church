@@ -4,4 +4,29 @@
     <string name="enter_your_detail">Email Address /Mobile Number</string>
     <string name="hidepassword">Password</string>
     <string name="forgotpass">Forgot Password?</string>
+    <string name="createAccount">Don\'t have an account ?</string>
+    <string name="createhaveAccount">Already have an account? <b>Login</b></string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Welcome!</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_slideshow">Share the app</string>
+    <string name="menu_about">About church</string>
+    <string name="menu_prayers">Your prayers</string>
+    <string name="menu_donations">Your donations</string>
+    <string name="menu_download">Download</string>
+    <string name="start">Skip</string>
+    <string name="next">Got it</string>
+    <string name="welcome">Welcome!</string>
+    <string name="dummyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis lectus eleifend, cursus diam vel, luctus turpis. Quisque tincidunt sapien sed pharetra dapibus. Donec lobortis, lacus a tempor vulputate, urna lectus volutpat massa, sed auctor ante lacus eu nisi. Integer mi turpis, cursus elementum sollicitudin in, vehicula at felis. Sed porta massa eu orci pharetra ornare. Nam fermentum luctus justo, quis varius magna tempor quis. Curabitur luctus malesuada nunc, id lacinia orci ullamcorper at. Fusce fringilla felis quis neque bibendum, quis condimentum lorem blandit.</string>
+    <string name="no_internet">No Internet</string>
+    <string name="no_internet_msg_title">Just try reloading the page or switch on the\n data and try again</string>
+
+
 </resources>

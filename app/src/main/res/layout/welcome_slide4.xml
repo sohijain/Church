@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_80sdp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:fontFamily="@font/circular_std_bold"
+        android:text="Welcome!"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/_20sdp" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_below="@id/heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/image" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Welcome to Church"
+            android:fontFamily="@font/circular_std_bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sdp" />
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Plain and simple. That’s our approach, the easy way to teach you where and how to best play your hard earned money."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/circular"
+            android:textSize="@dimen/_14sdp" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
