@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.church.com.R;
+import com.church.com.signup.SignUpActivity;
 
 public class SigninActivity extends AppCompatActivity {
 

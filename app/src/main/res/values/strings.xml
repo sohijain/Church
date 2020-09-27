@@ -27,6 +27,8 @@
     <string name="dummyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis lectus eleifend, cursus diam vel, luctus turpis. Quisque tincidunt sapien sed pharetra dapibus. Donec lobortis, lacus a tempor vulputate, urna lectus volutpat massa, sed auctor ante lacus eu nisi. Integer mi turpis, cursus elementum sollicitudin in, vehicula at felis. Sed porta massa eu orci pharetra ornare. Nam fermentum luctus justo, quis varius magna tempor quis. Curabitur luctus malesuada nunc, id lacinia orci ullamcorper at. Fusce fringilla felis quis neque bibendum, quis condimentum lorem blandit.</string>
     <string name="no_internet">No Internet</string>
     <string name="no_internet_msg_title">Just try reloading the page or switch on the\n data and try again</string>
+    <string name="labelLoading">Loading...</string>
+    <string name="error_internet_connection">Please check Internet</string>
 
 
 </resources>

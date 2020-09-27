@@ -38,7 +38,7 @@
 
 
         <activity
-            android:name=".screens.SignUpActivity"
+            android:name=".signup.SignUpActivity"
             android:label="@string/title_activity_drawer"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
