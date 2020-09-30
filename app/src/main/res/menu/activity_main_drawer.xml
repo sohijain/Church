@@ -12,10 +12,6 @@
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_baseline_profile"
         android:title="@string/menu_profile" />
-    <item
-        android:id="@+id/nav_share"
-        android:icon="@drawable/ic_baseline_share"
-        android:title="@string/menu_slideshow" />
 
     <item
         android:id="@+id/nav_about"
@@ -35,4 +31,9 @@
         android:id="@+id/nav_download"
         android:icon="@drawable/ic_baseline_download"
         android:title="@string/menu_download" />
+
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/ic_baseline_share"
+        android:title="@string/menu_slideshow" />
 </menu>

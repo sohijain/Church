@@ -48,6 +48,12 @@
 
 
         <activity
+            android:name=".home_message.ActivityHomeMessage"
+            android:label="@string/title_activity_drawer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
             android:name=".screens.ActivityHomeDetailed"
             android:label="@string/title_activity_drawer"
             android:screenOrientation="portrait"

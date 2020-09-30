@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/rlMenuBack"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_bg_curve" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:focusableInTouchMode="true"
+        android:isScrollContainer="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mCvAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:cardElevation="1.7dp"
+                app:cardUseCompatPadding="true"
+                card_view:cardCornerRadius="5dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/mTvAbout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/circular_std_bold"
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Moment midweek online experience"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/mTvServiceTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline47"
+                        app:layout_constraintStart_toStartOf="@+id/guideline46"
+                        app:layout_constraintTop_toBottomOf="@+id/view100" />
+
+                    <TextView
+                        android:id="@+id/mTvDisplayServices"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+
+                        app:layout_constraintEnd_toStartOf="@+id/guideline47"
+                        app:layout_constraintStart_toStartOf="@+id/guideline46"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvServiceTitle" />
+
+                    <TextView
+                        android:id="@+id/mtvBioTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline47"
+                        app:layout_constraintStart_toStartOf="@+id/guideline46"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvDisplayServices" />
+
+                    <TextView
+                        android:id="@+id/mTvDisplayBio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline47"
+                        app:layout_constraintStart_toStartOf="@+id/guideline46"
+                        app:layout_constraintTop_toBottomOf="@+id/mtvBioTitle" />
+
+                    <View
+                        android:id="@+id/view100"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black"
+                        android:visibility="visible"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvAbout" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline46"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.05109489" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline47"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mCvDetailsInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:visibility="visible"
+                app:cardElevation="1.7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                card_view:cardCornerRadius="5dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/mTvContactInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline469"
+                        app:layout_constraintStart_toStartOf="@+id/guideline468"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <View
+                        android:id="@+id/view3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvContactInfo" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline468"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.05109489" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline469"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mRvContactDetailsInfo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline469"
+                        app:layout_constraintStart_toStartOf="@+id/guideline468"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvContactInfo" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/mCvDetailsOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="7dp"
+                android:visibility="visible"
+                app:cardElevation="1.7dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                card_view:cardCornerRadius="5dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/mTvContactOther"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline401"
+                        app:layout_constraintStart_toStartOf="@+id/guideline400"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tvNoteTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline401"
+                        app:layout_constraintStart_toStartOf="@+id/guideline400"
+                        app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                    <TextView
+                        android:id="@+id/mTvDisplayNote"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+
+                        app:layout_constraintEnd_toStartOf="@+id/guideline401"
+                        app:layout_constraintStart_toStartOf="@+id/guideline400"
+                        app:layout_constraintTop_toBottomOf="@+id/tvNoteTitle" />
+
+                    <TextView
+                        android:id="@+id/tvLocationTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline401"
+                        app:layout_constraintStart_toStartOf="@+id/guideline400"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvDisplayNote" />
+
+                    <TextView
+                        android:id="@+id/mTvDisplayLocation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/menu_about"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline401"
+                        app:layout_constraintStart_toStartOf="@+id/guideline400"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLocationTitle" />
+
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/mTvContactOther" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline400"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.05109489" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline401"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

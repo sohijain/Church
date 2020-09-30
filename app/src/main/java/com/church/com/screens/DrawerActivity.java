@@ -123,7 +123,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
                             return true;
                         case R.id.bottom_messages:
 
-                            mRlMenu.setVisibility(View.GONE);
+                            mRlMenu.setVisibility(View.VISIBLE);
                             openFragment(new MessageFragment());
                             return true;
                         case R.id.bottom_give:
@@ -158,6 +158,8 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
         Fragment fragment = null;
         switch (menuItemId) {
             case R.id.nav_home:
+                mBottomNavigationMenu.setSelectedItemId(R.id.bottom_home);
+
                 fragment = new HomeFragment();
 
                 openFragment(fragment);

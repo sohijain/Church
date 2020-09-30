@@ -1,4 +1,4 @@
-package com.church.com.screens;
+package com.church.com.home_message;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -6,59 +6,58 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.church.com.R;
-import com.church.com.utility.Constant;
+import com.church.com.message.MessageBean;
+import com.church.com.message.MessageListAdapter;
 
-public class ActivityHomeDetailed extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class ActivityHomeMessage extends AppCompatActivity {
 
     private RelativeLayout rlMenuBack;
-    private RelativeLayout rlClick;
-    private TextView tvToolbarText;
-    private TextView tvText;
+    private RecyclerView mRvHomeMessage;
+    private HomeMessageListAdapter mHomeMessageListAdapter;
+    private List<HomeMessageBean> mMessageList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_detailed);
+        setContentView(R.layout.activity_home_message);
         changeStatusBarColor();
         init();
     }
 
 
     private void init() {
-
-
         rlMenuBack = findViewById(R.id.rlMenuBack);
-        rlClick = findViewById(R.id.rlClick);
-        tvToolbarText = findViewById(R.id.tvToolbarText);
-        tvText = findViewById(R.id.tvText);
         rlMenuBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+        setMessageList();
+    }
 
-        if (getIntent() != null) {
 
-            int screen_index = getIntent().getIntExtra("screen_index", -1);
-            String screen_index_title = getIntent().getStringExtra("screen_index_title");
+    private void setMessageList() {
 
-            if (screen_index != -1) {
-                rlClick.setVisibility(View.GONE);
-            } else {
-                rlClick.setVisibility(View.VISIBLE);
+        mRvHomeMessage = findViewById(R.id.mRvHomeMessage);
 
-            }
+        mMessageList = new ArrayList<>();
+        mHomeMessageListAdapter = new HomeMessageListAdapter(this, mMessageList);
 
-            tvToolbarText.setText(screen_index_title);
-            tvText.setText(screen_index_title);
-        }
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mRvHomeMessage.setLayoutManager(mLayoutManager);
+        mRvHomeMessage.setAdapter(mHomeMessageListAdapter);
 
     }
 

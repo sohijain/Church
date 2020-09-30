@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.church.com.R;
 import com.church.com.events.ActivityEvents;
+import com.church.com.home_message.ActivityHomeMessage;
 import com.church.com.screens.ActivityHomeDetailed;
 import com.church.com.screens.ActivityPrayerSubmit;
 import com.church.com.utility.Constant;
@@ -98,8 +99,6 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
     private void setList() {
 
-        //mWatchList.clear();
-        //for (int i = 0; i < 6; i++) {
 
         WatchBean watchBean = new WatchBean();
         watchBean.setStrText("Watch Live");
@@ -125,7 +124,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
 
         WatchBean watchBean4 = new WatchBean();
-        watchBean4.setStrText("Sunday Messages & gathering");
+        watchBean4.setStrText("Sunday Messages");
 
         mWatchList.add(watchBean4);
 
@@ -133,7 +132,12 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         watchBean5.setStrText("Sunday gathering");
 
         mWatchList.add(watchBean5);
-        //  }
+
+        WatchBean watchBean6 = new WatchBean();
+        watchBean6.setStrText("Inetrcessor");
+
+        mWatchList.add(watchBean6);
+
 
     }
 
@@ -205,12 +209,25 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         } else if (aWatchBean.getStrText().equals("Today's prayer")) {
             intent = new Intent(mContext, ActivityHomeDetailed.class);
             intent.putExtra("screen_index", Constant.ACTIVITY_CALL_INDEX);
+            intent.putExtra("screen_index_title", "Today's prayer");
             startActivity(intent);
 
+        } else if (aWatchBean.getStrText().equals("Messages")) {
+            intent = new Intent(mContext, ActivityHomeMessage.class);
+            startActivity(intent);
         } else if (aWatchBean.getStrText().equals("Sunday gathering")) {
-
+            intent = new Intent(mContext, ActivityHomeDetailed.class);
+            intent.putExtra("screen_index", Constant.ACTIVITY_CALL_INDEX);
+            intent.putExtra("screen_index_title", "Sunday gathering");
+            startActivity(intent);
         } else if (aWatchBean.getStrText().equals("Inetrcessor")) {
 
+        } else {
+            intent = new Intent(mContext, ActivityHomeDetailed.class);
+            intent.putExtra("screen_index", Constant.ACTIVITY_CALL_INDEX);
+            intent.putExtra("screen_index_title", "Sunday Messages");
+
+            startActivity(intent);
         }
 
     }
