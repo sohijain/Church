@@ -86,8 +86,6 @@ public class Util {
                 e.printStackTrace();
             }
         }
-
-
     }
     public static void initializeProgressBar(Activity parent, String message) {
         if (ProgressBar!=null && ProgressBar.isShowing()) {

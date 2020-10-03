@@ -25,8 +25,28 @@ public interface NetworkInterface {
     /*http://www.awesomemedia.in/church/webservice/signup?name=test%20name&mobile=789456123&email=test@gmail.com&password=123465&lat=22.5651&lon=789&register_id=ab55svhsdhgh*/
 /*    @GET(WebService.SIGNUP)
     Observable<BasicResponse> createUser(@Field("name") String name, @Field("mobile") String mobile, @Field("email") String email, @Field("password") String password, @Field("lat") String lat, @Field("lon") String lon, @Field("register_id") String register_id);
- */@GET(WebService.SIGNUP)
+ */
+    @GET(WebService.SIGNUP)
     Observable<BasicResponse> createUser(@QueryMap Map<String, String> option);
+
+    @GET(WebService.LOGIN)
+    Observable<BasicResponse> login(@QueryMap Map<String, String> option);
+    @GET(WebService.CHANGE_PASSWORD)
+    Observable<BasicResponse> changePassword(@QueryMap Map<String, String> option);
+    @GET(WebService.SOCIAL_LOGIN)
+    Observable<BasicResponse> socialLogin(@QueryMap Map<String, String> option);
+    @GET(WebService.FORGOT_PASSWORD)
+    Observable<BasicResponse> forgotPassword(@QueryMap Map<String, String> option);
+    @GET(WebService.GET_PROFILE)
+    Observable<BasicResponse> getProfile(@QueryMap Map<String, String> option);
+    @GET(WebService.UPDATE_PROFILE)
+    Observable<BasicResponse> updateProfile(@QueryMap Map<String, String> option);
+    @GET(WebService.GET_CATEGORY)
+    Observable<BasicResponse> getCategory(@QueryMap Map<String, String> option);
+    @GET(WebService.GET_INFO)
+    Observable<BasicResponse> getInfo(@QueryMap Map<String, String> option);
+    @GET(WebService.BANNER)
+    Observable<BasicResponse> benner(@QueryMap Map<String, String> option);
 /*
     //   @FormUrlEncoded
     @POST(WebService.ADD_CHAT)

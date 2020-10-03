@@ -1,7 +1,10 @@
-package com.church.com.signup;
+package com.church.com.signin;
 import com.church.com.NetworkClient;
 import com.church.com.NetworkInterface;
 import com.church.com.model.BasicResponse;
+import com.church.com.signup.SignUpPresenterInterface;
+import com.church.com.signup.SignUpViewInterface;
+
 import java.util.Map;
 
 import androidx.annotation.NonNull;
@@ -9,20 +12,19 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.RequestBody;
 
-public class SignUpPresenter implements SignUpPresenterInterface {
+public class SignInPresenter implements SignInPresenterInterface {
 
-    SignUpViewInterface signUpViewInterface;
+    SignInViewInterface signInViewInterface;
 
-    public SignUpPresenter(SignUpViewInterface signUpViewInterface) {
-        this.signUpViewInterface = signUpViewInterface;
+    public SignInPresenter(SignInViewInterface signInViewInterface) {
+        this.signInViewInterface = signInViewInterface;
     }
 
 
     public Observable<BasicResponse> getObservable(Map<String, String> params) {
         return NetworkClient.getRetrofit().create(NetworkInterface.class)
-                .createUser(params)
+                .login(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
@@ -31,27 +33,27 @@ public class SignUpPresenter implements SignUpPresenterInterface {
         return new DisposableObserver<BasicResponse>() {
             @Override
             public void onNext(@NonNull BasicResponse basicResponse) {
-                signUpViewInterface.hideProgressBar();
-                signUpViewInterface.onSuccess(basicResponse);
+                signInViewInterface.hideProgressBar();
+                signInViewInterface.onSuccess(basicResponse);
             }
 
             @Override
             public void onError(@NonNull Throwable e) {
-                signUpViewInterface.hideProgressBar();
+                signInViewInterface.hideProgressBar();
                 e.printStackTrace();
-                signUpViewInterface.showError(e.getMessage());
+                signInViewInterface.showError(e.getMessage());
             }
 
             @Override
             public void onComplete() {
-                signUpViewInterface.hideProgressBar();
+                signInViewInterface.hideProgressBar();
             }
         };
     }
 
     @Override
-    public void signUp(Map<String, String> params) {
-        signUpViewInterface.showProgressBar();
+    public void signIn(Map<String, String> params) {
+        signInViewInterface.showProgressBar();
         getObservable(params).subscribeWith(getObserver());;
     }
 }
