@@ -1,5 +1,6 @@
 package com.church.com.message;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,16 +9,52 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.church.com.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MessageFragment extends Fragment {
+
+
+    private RecyclerView recyclerView;
+    private MessageListAdapter mMessageListAdapter;
+    private List<MessageBean> mMessageList;
+
+    private Context mContext;
+    private View view;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_message, container, false);
+        view = inflater.inflate(R.layout.fragment_message, container, false);
+
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mContext = getActivity();
+
+        setWatchList();
+    }
+
+
+    private void setWatchList() {
+
+        recyclerView = view.findViewById(R.id.mRvMessage);
+
+        mMessageList = new ArrayList<>();
+        mMessageListAdapter = new MessageListAdapter(mContext, mMessageList);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(mContext);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setAdapter(mMessageListAdapter);
+
     }
 }

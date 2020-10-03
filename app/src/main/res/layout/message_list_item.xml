@@ -6,7 +6,7 @@
     android:id="@+id/mClProfileListItemMain"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="3dp">
+    android:padding="@dimen/_3sdp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -57,7 +57,7 @@
                 android:gravity="center"
                 android:maxLines="1"
                 android:text="10 min ago"
-                android:textSize="13sp"
+                android:textSize="@dimen/_10sdp"
                 android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="@+id/guidelin1"
                 app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                 android:maxLines="1"
                 android:text="@string/app_name"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/_14sdp"
                 app:layout_constraintEnd_toStartOf="@+id/mClearConnectiontext"
                 app:layout_constraintStart_toEndOf="@+id/mIvMessageUserImage"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -89,6 +89,7 @@
                 android:fontFamily="@font/circular"
                 android:maxLines="4"
                 android:text="@string/dummyText"
+                android:textSize="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="@+id/guideline5"
                 app:layout_constraintStart_toStartOf="@+id/tvMessageName"
                 app:layout_constraintTop_toBottomOf="@+id/tvMessageName" />
@@ -109,7 +110,7 @@
                 app:layout_constraintGuide_end="5dp" />
 
 
-            <com.github.abdularis.civ.AvatarImageView
+            <ImageView
                 android:id="@+id/mIvMessageUserImage"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
@@ -117,13 +118,11 @@
                 android:clickable="false"
                 android:src="@drawable/ic_add_profile_default_profile"
                 android:visibility="visible"
-                app:avatarBackgroundColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/guidelin1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:strokeColor="@color/black"
-                app:strokeWidth="1dp"
-                app:textSize="24sp" />
+                app:strokeWidth="1dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

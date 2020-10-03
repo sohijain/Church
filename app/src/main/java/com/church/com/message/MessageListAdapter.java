@@ -11,7 +11,6 @@ import java.util.List;
 
 public class MessageListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    boolean isLoading = false, isMoreDataAvailable = true;
 
     static Context mContext;
     List<MessageBean> movies;
@@ -40,7 +39,8 @@ public class MessageListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public int getItemCount() {
-        return movies.size();
+       // return movies.size();
+        return 3;
     }
 
 

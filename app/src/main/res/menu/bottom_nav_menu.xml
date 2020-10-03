@@ -8,7 +8,7 @@
     <item
         android:id="@+id/bottom_messages"
         android:icon="@drawable/chat_white"
-        android:title="Messages" />
+        android:title="Let's chat" />
 
     <item
         android:id="@+id/bottom_give"

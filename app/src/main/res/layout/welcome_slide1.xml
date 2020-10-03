@@ -43,7 +43,6 @@
             android:gravity="center"
             android:text="Welcome to Church"
             android:fontFamily="@font/circular_std_bold"
-            android:textColor="@color/black"
             android:textSize="@dimen/_20sdp" />
 
         <TextView
@@ -53,7 +52,6 @@
             android:layout_gravity="center"
             android:text="Plain and simple. That’s our approach, the easy way to teach you where and how to best play your hard earned money."
             android:textAlignment="center"
-            android:textColor="@color/black"
             android:layout_marginTop="@dimen/_10sdp"
             android:fontFamily="@font/circular"
             android:textSize="@dimen/_14sdp" />

@@ -71,6 +71,7 @@ public class IntroScreenActivity extends AppCompatActivity {
             mDotsLayout.addView(mDots[i]);
             if (i != mDots.length - 1) {
                 ImageView hiddenDotIv = new ImageView(this);
+
                 hiddenDotIv.setBackgroundResource(R.drawable.selected_activedots);
                 hiddenDotIv.setVisibility(View.INVISIBLE);
                 mDotsLayout.addView(hiddenDotIv);
