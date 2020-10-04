@@ -4,7 +4,7 @@
         android:angle="90"
         android:endColor="@color/colorAccent"
         android:startColor="@color/colorAccent"/>
-    <corners android:radius="20dip" />
+    <corners android:radius="30dip" />
 
 
 </shape>

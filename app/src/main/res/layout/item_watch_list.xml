@@ -6,15 +6,17 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvBig"
-        android:layout_width="@dimen/_130sdp"
-        android:layout_height="@dimen/_80sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_72sdp"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
         android:visibility="visible"
         app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginEnd="@dimen/_5sdp">
 
 
     </androidx.cardview.widget.CardView>
@@ -31,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.74" />
+        app:layout_constraintGuide_percent="0.8" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -44,7 +46,8 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cvSmall"
         android:layout_width="0dp"
-        android:layout_height="@dimen/_65sdp"
+        android:layout_height="@dimen/_62sdp"
+        android:layout_marginStart="@dimen/_7sdp"
         android:visibility="visible"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="@dimen/_10sdp"

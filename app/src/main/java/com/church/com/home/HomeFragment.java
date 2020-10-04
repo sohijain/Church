@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.church.com.R;
 import com.church.com.events.ActivityEvents;
 import com.church.com.home_message.ActivityHomeMessage;
+import com.church.com.screens.ActivityGathering;
 import com.church.com.screens.ActivityHomeDetailed;
 import com.church.com.screens.ActivityPrayerSubmit;
 import com.church.com.utility.Constant;
@@ -204,6 +205,8 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
         } else if (aWatchBean.getStrText().equals("Watch Live")) {
             intent = new Intent(mContext, ActivityHomeDetailed.class);
+            intent.putExtra("screen_index_title", "Watch Live");
+
             startActivity(intent);
 
         } else if (aWatchBean.getStrText().equals("Today's prayer")) {
@@ -216,8 +219,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
             intent = new Intent(mContext, ActivityHomeMessage.class);
             startActivity(intent);
         } else if (aWatchBean.getStrText().equals("Sunday gathering")) {
-            intent = new Intent(mContext, ActivityHomeDetailed.class);
-            intent.putExtra("screen_index", Constant.ACTIVITY_CALL_INDEX);
+            intent = new Intent(mContext, ActivityGathering.class);
             intent.putExtra("screen_index_title", "Sunday gathering");
             startActivity(intent);
         } else if (aWatchBean.getStrText().equals("Inetrcessor")) {
@@ -226,7 +228,6 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
             intent = new Intent(mContext, ActivityHomeDetailed.class);
             intent.putExtra("screen_index", Constant.ACTIVITY_CALL_INDEX);
             intent.putExtra("screen_index_title", "Sunday Messages");
-
             startActivity(intent);
         }
 

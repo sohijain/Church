@@ -1,6 +1,7 @@
 package com.church.com.events;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.church.com.R;
+import com.church.com.screens.ActivityGathering;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class ActivityEvents extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener,IEventsClick{
+public class ActivityEvents extends AppCompatActivity implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener, IEventsClick {
 
     private RelativeLayout rlMenuBack;
 
@@ -65,7 +67,7 @@ public class ActivityEvents extends AppCompatActivity implements BaseSliderView.
         mRvEvents = findViewById(R.id.mRvEvents);
 
         mEventList = new ArrayList<>();
-        mEventListAdapter = new EventsListAdapter(this, mEventList,this);
+        mEventListAdapter = new EventsListAdapter(this, mEventList, this);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRvEvents.setLayoutManager(mLayoutManager);
@@ -140,5 +142,8 @@ public class ActivityEvents extends AppCompatActivity implements BaseSliderView.
     @Override
     public void IEventsClick() {
 
+        Intent intent = new Intent(this, ActivityGathering.class);
+        intent.putExtra("screen_index_title", "Events");
+        startActivity(intent);
     }
 }

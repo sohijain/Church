@@ -1,5 +1,6 @@
 package com.church.com.home_message;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.church.com.R;
 import com.church.com.message.MessageBean;
 import com.church.com.message.MessageListAdapter;
+import com.church.com.screens.ActivityBibleDetailed;
+import com.church.com.screens.ActivityHomeMessageDetail;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityHomeMessage extends AppCompatActivity {
+public class ActivityHomeMessage extends AppCompatActivity implements IClickHomeMessageDetailed{
 
     private RelativeLayout rlMenuBack;
     private RecyclerView mRvHomeMessage;
@@ -53,7 +56,7 @@ public class ActivityHomeMessage extends AppCompatActivity {
         mRvHomeMessage = findViewById(R.id.mRvHomeMessage);
 
         mMessageList = new ArrayList<>();
-        mHomeMessageListAdapter = new HomeMessageListAdapter(this, mMessageList);
+        mHomeMessageListAdapter = new HomeMessageListAdapter(this, mMessageList,this);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRvHomeMessage.setLayoutManager(mLayoutManager);
@@ -69,5 +72,11 @@ public class ActivityHomeMessage extends AppCompatActivity {
             int color = ContextCompat.getColor(this, R.color.colorAccent);
             window.setStatusBarColor(color);
         }
+    }
+
+    @Override
+    public void IClickHomeMessageDetailed() {
+        Intent intent = new Intent(this, ActivityHomeMessageDetail.class);
+        startActivity(intent);
     }
 }

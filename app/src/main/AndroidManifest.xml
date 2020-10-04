@@ -35,6 +35,25 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
+            android:name=".screens.ActivityAboutUs"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
+        <activity
+            android:name=".screens.ActivityGathering"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".screens.ActivityHomeMessageDetail"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
             android:name=".events.ActivityEvents"
             android:label="@string/title_activity_drawer"
             android:screenOrientation="portrait"

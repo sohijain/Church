@@ -175,6 +175,11 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
 
                 break;
 
+            case R.id.nav_about:
+                Intent intentAboutUs = new Intent(this, ActivityAboutUs.class);
+                startActivity(intentAboutUs);
+                break;
+
 
             default:
                 break;
