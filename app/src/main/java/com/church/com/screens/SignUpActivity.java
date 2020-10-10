@@ -1,4 +1,4 @@
-package com.church.com.signup;
+package com.church.com.screens;
 
 import android.content.Intent;
 import android.os.Build;
@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 import com.church.com.R;
 import com.church.com.model.BasicResponse;
-import com.church.com.screens.DrawerActivity;
-import com.church.com.signin.SigninActivity;
+import com.church.com.presenter.SignUpPresenter;
 import com.church.com.utility.Util;
+import com.church.com.view_interface.SignUpViewInterface;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -151,7 +151,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpViewInter
             }
         }
         if(view==rlsign){
-            Intent intent = new Intent(SignUpActivity.this, SigninActivity.class);
+            Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
             startActivity(intent);
             finish();
         }

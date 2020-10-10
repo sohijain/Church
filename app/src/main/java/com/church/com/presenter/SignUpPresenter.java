@@ -1,7 +1,10 @@
-package com.church.com.signup;
+package com.church.com.presenter;
 import com.church.com.NetworkClient;
 import com.church.com.NetworkInterface;
 import com.church.com.model.BasicResponse;
+import com.church.com.presenter_interface.SignUpPresenterInterface;
+import com.church.com.view_interface.SignUpViewInterface;
+
 import java.util.Map;
 
 import androidx.annotation.NonNull;
@@ -9,7 +12,6 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.RequestBody;
 
 public class SignUpPresenter implements SignUpPresenterInterface {
 

@@ -1,4 +1,4 @@
-package com.church.com.signin;
+package com.church.com.screens;
 
 import android.content.Intent;
 import android.os.Build;
@@ -10,17 +10,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.church.com.R;
-import com.church.com.model.BasicResponse;
-import com.church.com.screens.DrawerActivity;
-import com.church.com.signup.SignUpActivity;
-import com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.core.content.ContextCompat;
 
-public class SigninActivity extends AppCompatActivity implements SignInViewInterface, View.OnClickListener {
+import com.church.com.R;
+import com.church.com.model.BasicResponse;
+import com.church.com.view_interface.SignInViewInterface;
+import com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText;
+
+public class SignInActivity extends AppCompatActivity implements SignInViewInterface, View.OnClickListener {
 
     private RelativeLayout rlSignIn;
     private RelativeLayout rlSignUp;
@@ -92,11 +91,11 @@ public class SigninActivity extends AppCompatActivity implements SignInViewInter
     @Override
     public void onClick(View view) {
         if(view==rlSignIn){
-            Intent intent = new Intent(SigninActivity.this, DrawerActivity.class);
+            Intent intent = new Intent(SignInActivity.this, DrawerActivity.class);
             startActivity(intent);
             finish();
         }   if(view==rlSignUp){
-            Intent intent = new Intent(SigninActivity.this, SignUpActivity.class);
+            Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
             startActivity(intent);
         }
     }

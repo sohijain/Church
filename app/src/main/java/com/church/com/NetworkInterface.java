@@ -1,6 +1,11 @@
 package com.church.com;
 
+import com.church.com.model.BannerResponse;
 import com.church.com.model.BasicResponse;
+import com.church.com.model.CategoryResponse;
+import com.church.com.model.EventDetailResponse;
+import com.church.com.model.EventResponse;
+import com.church.com.model.UserProfileResponse;
 import com.google.gson.JsonObject;
 
 import java.util.Map;
@@ -38,15 +43,19 @@ public interface NetworkInterface {
     @GET(WebService.FORGOT_PASSWORD)
     Observable<BasicResponse> forgotPassword(@QueryMap Map<String, String> option);
     @GET(WebService.GET_PROFILE)
-    Observable<BasicResponse> getProfile(@QueryMap Map<String, String> option);
+    Observable<UserProfileResponse> getProfile(@QueryMap Map<String, String> option);
     @GET(WebService.UPDATE_PROFILE)
     Observable<BasicResponse> updateProfile(@QueryMap Map<String, String> option);
     @GET(WebService.GET_CATEGORY)
-    Observable<BasicResponse> getCategory(@QueryMap Map<String, String> option);
+    Observable<CategoryResponse> getCategory();
     @GET(WebService.GET_INFO)
     Observable<BasicResponse> getInfo(@QueryMap Map<String, String> option);
     @GET(WebService.BANNER)
-    Observable<BasicResponse> benner(@QueryMap Map<String, String> option);
+    Observable<BannerResponse> benner();
+    @GET(WebService.GET_EVENT)
+    Observable<EventResponse> getEvent();
+    @GET(WebService.GET_EVENT_DETAIL)
+    Observable<EventDetailResponse> getEventDetail(@QueryMap Map<String, String> option);
 /*
     //   @FormUrlEncoded
     @POST(WebService.ADD_CHAT)

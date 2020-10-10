@@ -19,7 +19,6 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.church.com.R;
-import com.church.com.signin.SigninActivity;
 import com.church.com.utility.Constant;
 import com.church.com.utility.StorageUtils;
 
@@ -85,7 +84,7 @@ public class IntroScreenActivity extends AppCompatActivity {
     private void launchHomeScreen() {
         firstCheckLaunch();
 
-        Intent intent = new Intent(IntroScreenActivity.this, SigninActivity.class);
+        Intent intent = new Intent(IntroScreenActivity.this, SignInActivity.class);
         //intent.putExtra(Constant.INTENT_ENTRY_POINT_FOR_LOGIN_SCREEN,Constant.LOGIN_ENTRY_POINT_BY_INTRO_ACTIVITY);
         startActivity(intent);
         finish();

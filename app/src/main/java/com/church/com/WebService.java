@@ -11,8 +11,10 @@ public class WebService {
     public static final String FORGOT_PASSWORD="forgot_password?";
     public static final String GET_PROFILE="get_profile?";
     public static final String UPDATE_PROFILE="update_profile?";
-    public static final String GET_CATEGORY="get_category?";
+    public static final String GET_CATEGORY="get_category";
     public static final String GET_INFO="get_info?";
-    public static final String BANNER="banner?";
+    public static final String BANNER="banner";
+    public static final String GET_EVENT="get_event";
+    public static final String GET_EVENT_DETAIL="event_details";
 
 }

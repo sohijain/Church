@@ -1,4 +1,4 @@
-package com.church.com;
+package com.church.com.view_interface;
 
 public interface BasicViewsInterface {
     void showToast(String s);

@@ -1,9 +1,9 @@
-package com.church.com.signin;
+package com.church.com.presenter;
 import com.church.com.NetworkClient;
 import com.church.com.NetworkInterface;
 import com.church.com.model.BasicResponse;
-import com.church.com.signup.SignUpPresenterInterface;
-import com.church.com.signup.SignUpViewInterface;
+import com.church.com.presenter_interface.SignInPresenterInterface;
+import com.church.com.view_interface.SignInViewInterface;
 
 import java.util.Map;
 
