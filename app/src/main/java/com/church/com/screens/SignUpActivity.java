@@ -84,6 +84,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpViewInter
 
     @Override
     public void showToast(String s) {
+        Util.ShowToast(SignUpActivity.this,s);
 
     }
 

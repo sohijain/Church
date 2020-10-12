@@ -2,6 +2,7 @@ package com.church.com.presenter;
 import com.church.com.NetworkClient;
 import com.church.com.NetworkInterface;
 import com.church.com.model.BasicResponse;
+import com.church.com.model.LoginResponse;
 import com.church.com.presenter_interface.SignInPresenterInterface;
 import com.church.com.view_interface.SignInViewInterface;
 
@@ -22,17 +23,17 @@ public class SignInPresenter implements SignInPresenterInterface {
     }
 
 
-    public Observable<BasicResponse> getObservable(Map<String, String> params) {
+    public Observable<LoginResponse> getObservable(Map<String, String> params) {
         return NetworkClient.getRetrofit().create(NetworkInterface.class)
                 .login(params)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    public DisposableObserver<BasicResponse> getObserver() {
-        return new DisposableObserver<BasicResponse>() {
+    public DisposableObserver<LoginResponse> getObserver() {
+        return new DisposableObserver<LoginResponse>() {
             @Override
-            public void onNext(@NonNull BasicResponse basicResponse) {
+            public void onNext(@NonNull LoginResponse basicResponse) {
                 signInViewInterface.hideProgressBar();
                 signInViewInterface.onSuccess(basicResponse);
             }

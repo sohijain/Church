@@ -105,9 +105,17 @@ public class SplashActivity extends AppCompatActivity {
 
 
     private void gotoMain() {
-        Intent intent = new Intent(SplashActivity.this, IntroScreenActivity.class);
-        startActivity(intent);
-        finish();
+        if(AppSettings.isLogin(SplashActivity.this)){
+            Intent intent = new Intent(SplashActivity.this, DrawerActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            Intent intent = new Intent(SplashActivity.this, IntroScreenActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
 
     }
 

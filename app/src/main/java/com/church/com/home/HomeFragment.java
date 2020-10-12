@@ -3,6 +3,7 @@ package com.church.com.home;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.church.com.R;
 import com.church.com.events.ActivityEvents;
 import com.church.com.home_message.ActivityHomeMessage;
+import com.church.com.model.BannerResponse;
+import com.church.com.presenter.BannerPresenter;
 import com.church.com.screens.ActivityGathering;
 import com.church.com.screens.ActivityHomeDetailed;
 import com.church.com.screens.ActivityPrayerSubmit;
+import com.church.com.screens.SignInActivity;
 import com.church.com.utility.Constant;
+import com.church.com.utility.Util;
+import com.church.com.view_interface.BannerInterface;
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -31,22 +37,32 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class HomeFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener, IClickHomeDetailed {
+public class HomeFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener, IClickHomeDetailed, BannerInterface {
 
     private SliderLayout mDemoSlider;
     private Context mContext;
     private View view;
-
     private RecyclerView recyclerView;
     private WatchListAdapter mWatchListAdapter;
     private List<WatchBean> mWatchList;
     private Button mCLPrayer;
+    BannerPresenter bannerPresenter;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
+        setUpMVP();
+        getBanner();
         return view;
+    }
+
+    private void getBanner() {
+        bannerPresenter.getBanner();
+    }
+
+    private void setUpMVP() {
+        bannerPresenter=new BannerPresenter(this);
     }
 
     @Override
@@ -59,8 +75,8 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         init();
+
     }
 
 
@@ -230,6 +246,32 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
             intent.putExtra("screen_index_title", "Sunday Messages");
             startActivity(intent);
         }
+
+    }
+
+    @Override
+    public void onSuccess(BannerResponse bannerResponse) {
+        Log.e(getTag(),"banner list size..."+bannerResponse.getBannerData().size());
+    }
+
+    @Override
+    public void showToast(String s) {
+        Util.ShowToast(getActivity(),s);
+
+    }
+
+    @Override
+    public void showProgressBar() {
+
+    }
+
+    @Override
+    public void hideProgressBar() {
+
+    }
+
+    @Override
+    public void showError(String s) {
 
     }
 }

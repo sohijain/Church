@@ -5,6 +5,7 @@ import com.church.com.model.BasicResponse;
 import com.church.com.model.CategoryResponse;
 import com.church.com.model.EventDetailResponse;
 import com.church.com.model.EventResponse;
+import com.church.com.model.LoginResponse;
 import com.church.com.model.UserProfileResponse;
 import com.google.gson.JsonObject;
 
@@ -35,7 +36,7 @@ public interface NetworkInterface {
     Observable<BasicResponse> createUser(@QueryMap Map<String, String> option);
 
     @GET(WebService.LOGIN)
-    Observable<BasicResponse> login(@QueryMap Map<String, String> option);
+    Observable<LoginResponse> login(@QueryMap Map<String, String> option);
     @GET(WebService.CHANGE_PASSWORD)
     Observable<BasicResponse> changePassword(@QueryMap Map<String, String> option);
     @GET(WebService.SOCIAL_LOGIN)
