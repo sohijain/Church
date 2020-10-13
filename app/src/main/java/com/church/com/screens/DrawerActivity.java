@@ -9,7 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -22,19 +24,30 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.church.com.AppSettings;
 import com.church.com.R;
 import com.church.com.bible.BibleFragment;
 import com.church.com.give.GiveFragment;
 import com.church.com.home.HomeFragment;
 import com.church.com.message.MessageFragment;
+import com.church.com.model.BasicResponse;
+import com.church.com.model.UserProfileResponse;
+import com.church.com.presenter.ProfilePresenter;
+import com.church.com.view_interface.ProfileInterface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-public class DrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import java.util.HashMap;
+import java.util.Map;
+
+public class DrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ProfileInterface {
 
     private RelativeLayout mRlMenu;
     private BottomNavigationView mBottomNavigationMenu;
     boolean doubleBackToExitPressedOnce = false;
+    ProfilePresenter profilePresenter;
+    private TextView mTvNavHeaderName,mTvNavHeaderEmail;
+    private ImageView mIvNavProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +55,18 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
         setContentView(R.layout.activity_drawer);
         changeStatusBarColor();
         initToolbar();
+        setUpMVP();
+        getUserProfile();
+    }
+
+    private void getUserProfile() {
+        Map<String, String> data = new HashMap<>();
+        data.put("user_id", AppSettings.getUserId(DrawerActivity.this));
+        profilePresenter.getProfile(data);
+    }
+
+    private void setUpMVP() {
+        profilePresenter = new ProfilePresenter(this);
     }
 
     private void initToolbar() {
@@ -77,6 +102,11 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        final View headerLayout = navigationView.getHeaderView(0);
+        mTvNavHeaderName = headerLayout.findViewById(R.id.mTvNavHeaderName);
+        mTvNavHeaderEmail = headerLayout.findViewById(R.id.mTvNavHeaderEmail);
+        mIvNavProfile = headerLayout.findViewById(R.id.mIvNavProfile);
+
         navigationView.setNavigationItemSelectedListener(this);
 
         mRlMenu = findViewById(R.id.rlMenu);
@@ -100,7 +130,7 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
 
         mBottomNavigationMenu = findViewById(R.id.bottom_nav_view);
         mBottomNavigationMenu.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        openFragment(new HomeFragment());
+
 
     }
 
@@ -223,5 +253,42 @@ public class DrawerActivity extends AppCompatActivity implements NavigationView.
             int color = ContextCompat.getColor(this, R.color.colorPrimary);
             window.setStatusBarColor(color);
         }
+    }
+
+    @Override
+    public void onSuccess(BasicResponse bannerResponse) {
+
+    }
+
+    @Override
+    public void onGetProfileSuccess(UserProfileResponse userProfileResponse) {
+        if(userProfileResponse.getStatus().equals("1")){
+            mTvNavHeaderName.setText(userProfileResponse.getLoginResult().getName());
+            mTvNavHeaderEmail.setText(userProfileResponse.getLoginResult().getEmail());
+            AppSettings.setUserName(DrawerActivity.this,userProfileResponse.getLoginResult().getName());
+            AppSettings.setEmail(DrawerActivity.this,userProfileResponse.getLoginResult().getEmail());
+            openFragment(new HomeFragment());
+        }
+
+    }
+
+    @Override
+    public void showToast(String s) {
+
+    }
+
+    @Override
+    public void showProgressBar() {
+
+    }
+
+    @Override
+    public void hideProgressBar() {
+
+    }
+
+    @Override
+    public void showError(String s) {
+
     }
 }

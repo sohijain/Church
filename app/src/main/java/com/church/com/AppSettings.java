@@ -63,6 +63,19 @@ public class AppSettings {
     public static void setUserName(Context context, String paramString) {
         getPrefs(context).edit().putString("username", paramString).commit();
     }
+ public static String getEmail(Context context) {
+        return getPrefs(context).getString("email", null);
+    }
+
+    public static void setEmail(Context context, String paramString) {
+        getPrefs(context).edit().putString("email", paramString).commit();
+    } public static String getPic(Context context) {
+        return getPrefs(context).getString("pic", null);
+    }
+
+    public static void setPic(Context context, String paramString) {
+        getPrefs(context).edit().putString("pic", paramString).commit();
+    }
 
     public static String getUserToken(Context context) {
         return getPrefs(context).getString("usertoken", null);

@@ -76,7 +76,6 @@ public class SignInActivity extends AppCompatActivity implements SignInViewInter
             finish();
         }
 
-
     }
 
     @Override
